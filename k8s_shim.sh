@@ -14,7 +14,7 @@ kubectl(){
   PATH_TO_SECRET_EXECUTABLE="${SCRIPTPATH}/secret"
 
   case "$@" in
-    *"get"*"secret"* | *"edit"*"secret"* | *"create"*"secret"*)
+    *"get"*" secret"* | *"edit"*" secret"* | *"create"*" secret"*)
         # ignore if "secrets" instead of "secret"
         # shellcheck disable=SC2199
         if [[ "$@" == *"--no-easy-k8s-secrets "* ]]; then
