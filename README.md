@@ -48,6 +48,13 @@ kubectl get secret {secret_name} --namespace {namespace}
 kubectl get secret {secret_name} -n {namespace}
 ```
 
+### Skipping Easy K8s Secrets Shim
+If you need to use kubectl directly, for whatever reason, you can skip the shim by using `kubectl --no-easy-k8s-secrets [get,edit,etc] secret`. This will pass the command directly to kubectl.
+```bash
+kubectl --no-easy-k8s-secrets get secret {secret_name} --namespace {namespace}
+kubectl --no-easy-k8s-secrets get secret {secret_name} -n {namespace}
+```
+
 ## Considerations
 
 The shim uses simple string matching to determine when to use either easy-k8s-secrets or kubectl.
